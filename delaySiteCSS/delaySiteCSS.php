@@ -14,7 +14,7 @@ class delaySiteCSS extends plxPlugin {
 
 	}	
 	public function plxShowPluginsCss(){ 
-	echo '<link rel="stylesheet" type="text/css" href="data.site" media="none" onload="if(media!=\'all\')media=\'all\'"  />';
+	echo '<link rel="stylesheet" type="text/css" href="data/site.css" media="none" onload="if(media!=\'all\')media=\'all\'"  />';
 				echo self::BEGIN_CODE;
 ?>
 	return true;
