@@ -2,7 +2,7 @@
 <document>
     <title><![CDATA[delaySiteCSS]]></title>
     <author><![CDATA[GC-nomade]]></author>
-    <version>version 0.2</version>
+    <version>version 0.3</version>
     <date>15/07/2022</date>
     <site>http://re7net.com</site>
     <description><![CDATA[charge les fichiers CSS en media="screen" sur l'evenement onLoad .]]></description>
