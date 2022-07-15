@@ -1,7 +1,5 @@
 <?php
 class delaySiteCSS extends plxPlugin {	 
-	const BEGIN_CODE = '<?php' . PHP_EOL;
-	const END_CODE = PHP_EOL . '?>';
     
 	public function __construct($default_lang) {
 		
@@ -9,17 +7,17 @@ class delaySiteCSS extends plxPlugin {
 		parent::__construct($default_lang);
 		
 		# déclaration des hooks
-		$this->addHook('plxShowPluginsCss', 'plxShowPluginsCss');
-		
-
+		$this->addHook('IndexEnd','IndexEnd');
 	}	
-	public function plxShowPluginsCss(){ 
-	echo '<link rel="stylesheet" type="text/css" href="data/site.css" media="none" onload="if(media!=\'all\')media=\'all\'"  />';
-				echo self::BEGIN_CODE;
-?>
-	return true;
-<?php
-		echo self::END_CODE;        
-       }
+  
+		public function IndexEnd() {
+			$find = 'media="screen"';	
+			echo '<?php ';?>
+				ob_start();
+				echo 'media="none" onload="if(media!=\'all\')media=\'all\'"'; 
+				$output = str_replace('<?php echo $find; ?>', ob_get_clean(), $output);
+		 ?>
+		  <?php	
+		}	  
 }
 ?>
