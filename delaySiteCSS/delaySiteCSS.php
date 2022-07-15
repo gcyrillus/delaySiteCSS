@@ -15,17 +15,17 @@ class delaySiteCSS extends plxPlugin {
             echo '<?php ';
 ?>
         $plxMotor->aConf['gzip'] ='0';
-            ?>
+?>
 <?php           
         }  
 	public function IndexEnd() {
-		$find = 'media="screen"';	
-		echo '<?php ';?>
-			ob_start();
-			echo 'media="none" onload="if(media!=\'all\')media=\'all\'"'; 
-			$output = str_replace('<?php echo $find; ?>', ob_get_clean(), $output);
-	 ?>
-	  <?php	
+	$find = 'media="screen"';	
+            echo '<?php ';?>
+		ob_start();
+		echo 'media="none" onload="if(media!=\'all\')media=\'all\'"'; 
+		$output = str_replace('<?php echo $find; ?>', ob_get_clean(), $output);
+?>
+<?php	
 	}		
 }
 ?>
