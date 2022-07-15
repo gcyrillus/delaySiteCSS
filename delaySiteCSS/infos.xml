@@ -3,7 +3,7 @@
     <title><![CDATA[delaySiteCSS]]></title>
     <author><![CDATA[GC-nomade]]></author>
     <version>version 0.2</version>
-    <date>14/07/2022</date>
+    <date>15/07/2022</date>
     <site>http://re7net.com</site>
     <description><![CDATA[charge le fichier site.css sur l'evenement onload de la page.]]></description>
     <scope>site</scope>
