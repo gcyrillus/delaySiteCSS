@@ -1,25 +1,21 @@
 <?php
-class delaySiteCSS extends plxPlugin {	 
-	const BEGIN_CODE = '<?php' . PHP_EOL;
-	const END_CODE = PHP_EOL . '?>';
+class delaySiteCSS extends plxPlugin {	
     
-	public function __construct($default_lang) {
-		
+	public function __construct($default_lang) {		
 		# appel du constructeur de la classe plxPlugin (obligatoire)
 		parent::__construct($default_lang);
 		
 		# déclaration des hooks
-		$this->addHook('plxShowPluginsCss', 'plxShowPluginsCss');
-		
-
+		$this->addHook('IndexBegin','IndexBegin');
+		$this->addHook('ThemeEndHead','ThemeEndHead');
 	}	
-	public function plxShowPluginsCss(){ 
-	echo '<link rel="stylesheet" type="text/css" href="data/site.css" media="none" onload="if(media!=\'all\')media=\'all\'"  />';
-				echo self::BEGIN_CODE;
-?>
-	return true;
-<?php
-		echo self::END_CODE;        
-       }
+		# modify les balises link : valeur des attributs media^à none et repasser à all sur l'evenement onload de la page.
+		public function ThemeEndHead() {	
+echo '<?php ';?>
+			ob_start();
+			$output = preg_replace('/(<*[^>]*media=)"[^>]+"([^>]*>)/', ob_get_clean().'\1"none" onload="if(media!=\'all\')media=\'all\'"\2', $output);
+	?>
+<?php	
+		}		
 }
 ?>
