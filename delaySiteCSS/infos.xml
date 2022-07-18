@@ -2,9 +2,9 @@
 <document>
     <title><![CDATA[delaySiteCSS]]></title>
     <author><![CDATA[GC-nomade]]></author>
-    <version>version 0.1</version>
-    <date>14/07/2022</date>
+    <version>version 0.4</version>
+    <date>16/07/2022</date>
     <site>http://re7net.com</site>
-    <description><![CDATA[charge le fichier site.css sur l'evenement onload de la page.]]></description>
+    <description><![CDATA[modifi les balises link (CSS)  dans head pour charger les feuilles de styles sur l'evenement onload de la page.]]></description>
     <scope>site</scope>
 </document>
