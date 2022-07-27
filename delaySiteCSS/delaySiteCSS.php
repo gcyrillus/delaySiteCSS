@@ -9,7 +9,7 @@ class delaySiteCSS extends plxPlugin {
 		$this->addHook('IndexBegin','IndexBegin');
 		$this->addHook('ThemeEndHead','ThemeEndHead');
 	}	
-		# modify les balises link : valeur des attributs media^à none et repasser à all sur l'evenement onload de la page.
+		# modify les balises link : valeur des attributs media passer en none et puis repasser à leurs valeurs d'origine sur l'evenement onload de la page.
 		public function ThemeEndHead() {	
 echo '<?php ';?>
 			ob_start();
